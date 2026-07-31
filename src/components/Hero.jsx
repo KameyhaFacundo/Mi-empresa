@@ -55,9 +55,7 @@ export default function Hero({ theme }) {
       <div className="hero-content" ref={contentRef}>
         <span className="eyebrow">Desarrollo a medida · Sin plantillas</span>
         <h1>
-          Tu negocio no funciona
-          <br />
-          como <em>cualquier</em> sistema.
+          Tu negocio no funciona como <em>cualquier</em> sistema.
         </h1>
         <p>
           Armamos software de gestión, POS y facturación pensado para cómo trabajás vos

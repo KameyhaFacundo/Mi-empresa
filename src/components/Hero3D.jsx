@@ -44,6 +44,7 @@ const PALETTES = {
     neighborLine: '#FF7A59',
     pulse: '#EAF5F0',
     points: '#EAF5F0',
+    pointsOpacity: 0.5,
   },
   light: {
     core: '#00875F',
@@ -51,7 +52,8 @@ const PALETTES = {
     coreLine: '#00875F',
     neighborLine: '#E85A3D',
     pulse: '#0F231C',
-    points: '#5C7268',
+    points: '#2E3B36',
+    pointsOpacity: 0.65,
   },
 };
 
@@ -196,7 +198,7 @@ function NetworkScene({ scrollProgress, nodeCount, pulseCount, palette }) {
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[orbitPositions, 3]} />
         </bufferGeometry>
-        <pointsMaterial color={palette.points} size={0.035} transparent opacity={0.5} />
+        <pointsMaterial color={palette.points} size={0.035} transparent opacity={palette.pointsOpacity} />
       </points>
     </>
   );
