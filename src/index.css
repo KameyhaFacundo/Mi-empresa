@@ -33,6 +33,12 @@
 
 html { scroll-behavior: smooth; }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -297,7 +303,11 @@ nav {
   position: relative;
   z-index: 2;
   max-width: 640px;
-  padding-top: 60px;
+  padding-top: 150px;
+}
+
+@media (max-width: 640px) {
+  .hero-content { padding-top: 120px; }
 }
 
 .eyebrow {
@@ -398,6 +408,11 @@ nav {
   display: flex;
   width: max-content;
   animation: marquee-scroll 26s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .marquee-half {
@@ -858,8 +873,11 @@ input, select, textarea {
   transition: border-color 0.25s;
 }
 input:focus, select:focus, textarea:focus {
-  outline: none;
   border-bottom-color: var(--accent);
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 1px 0 0 var(--accent);
 }
 select { color: var(--text); }
 select option { background: var(--surface); color: var(--text); }
