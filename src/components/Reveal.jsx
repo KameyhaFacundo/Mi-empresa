@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { gsap, ScrollTrigger } from '../lib/gsapSetup';
+import { gsap } from '../lib/gsapSetup';
 
 export default function Reveal({
   children,
