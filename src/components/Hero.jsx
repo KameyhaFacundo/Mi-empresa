@@ -63,7 +63,7 @@ export default function Hero({ theme, t }) {
             <a href="#contacto" className="btn-primary">{t.ctaPrimary}</a>
           </Magnetic>
           <Magnetic strength={12}>
-            <a href="#caso" className="btn-ghost">{t.ctaGhost}</a>
+            <a href="#proyectos" className="btn-ghost">{t.ctaGhost}</a>
           </Magnetic>
         </div>
         <div className="stack-badges">

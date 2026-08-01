@@ -4,7 +4,7 @@ import Marquee from './components/Marquee';
 import Nosotros from './components/Nosotros';
 import Servicios from './components/Servicios';
 import Proceso from './components/Proceso';
-import CasoReal from './components/CasoReal';
+import Proyectos from './components/Proyectos';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
@@ -25,7 +25,7 @@ function App() {
       <Nosotros t={t.nosotros} />
       <Servicios t={t.servicios} />
       <Proceso t={t.proceso} />
-      <CasoReal t={t.caso} />
+      <Proyectos t={t.proyectos} />
       <Contacto t={t.contacto} />
       <Footer t={t.footer} />
       <WhatsAppFloat />

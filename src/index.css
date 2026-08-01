@@ -643,7 +643,7 @@ section {
   border-radius: 100px;
 }
 
-/* CASE — showcase panel */
+/* PROYECTOS — showcase carousel */
 .showcase-panel {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -654,107 +654,90 @@ section {
 .showcase-panel__chrome {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 18px 24px;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px 24px;
   background: var(--surface-2);
   border-bottom: 1px solid var(--border);
 }
 
-.showcase-panel__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--border);
-}
-
 .showcase-panel__path {
-  margin-left: 10px;
+  min-width: 64px;
+  text-align: center;
   color: var(--text-dim);
   font-size: 0.78rem;
 }
 
-.showcase-panel__body {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: stretch;
+.carousel-nav {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
-
-@media (max-width: 900px) {
-  .showcase-panel__body { grid-template-columns: 1fr; }
+.carousel-nav:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  transform: scale(1.06);
 }
 
 .case-copy {
   padding: 52px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  animation: caseFade 0.4s ease;
 }
 
 @media (max-width: 900px) {
   .case-copy { padding: 36px 28px; }
 }
 
-.case-copy .case-industry {
-  display: inline-block;
+@keyframes caseFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.project-tags {
+  display: flex;
+  gap: 10px;
+  min-height: 1px;
   margin-bottom: 16px;
+}
+
+.badge--status {
   color: var(--accent-2);
-  align-self: flex-start;
+  border-color: color-mix(in srgb, var(--accent-2) 40%, transparent);
 }
 
 .case-copy h3 {
-  font-size: clamp(1.7rem, 2.6vw, 2.1rem);
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 .case-copy p {
   color: var(--text-dim);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  max-width: 640px;
 }
 
-.case-stats {
+.project-stack {
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.case-stat .num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--accent-2);
+.project-link {
+  display: inline-flex;
+  margin-top: 24px;
 }
-.case-stat .label {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  margin-top: 4px;
-}
-
-.case-visual {
-  background: var(--surface-2);
-  border-left: 1px solid var(--border);
-  padding: 32px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.84rem;
-  color: var(--text-dim);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-@media (max-width: 900px) {
-  .case-visual { border-left: none; border-top: 1px solid var(--border); padding: 28px; }
-}
-
-.case-visual .row {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-}
-.case-visual .row:last-child { border-bottom: none; }
-.case-visual .row span:last-child { color: var(--accent-2); }
 
 /* CONTACT */
 #contacto {

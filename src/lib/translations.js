@@ -4,7 +4,7 @@ export const translations = {
       links: [
         { href: '#nosotros', label: 'Nosotros' },
         { href: '#servicios', label: 'Servicios' },
-        { href: '#caso', label: 'Un caso real' },
+        { href: '#proyectos', label: 'Proyectos' },
         { href: '#contacto', label: 'Contacto' },
       ],
       cta: 'Hablemos',
@@ -22,7 +22,7 @@ export const translations = {
       paragraph:
         'Armamos software de gestión, POS y facturación pensado para cómo trabajás vos — no al revés. Sin adaptar tu operación a un sistema genérico.',
       ctaPrimary: 'Contame tu caso',
-      ctaGhost: 'Ver un sistema real',
+      ctaGhost: 'Ver un proyecto real',
       badges: ['React', 'Laravel', 'MySQL', 'Integraciones a medida'],
     },
     marquee: [
@@ -101,23 +101,81 @@ export const translations = {
         { num: '04', title: 'Entrega y soporte', text: 'Puesta en producción, capacitación del equipo y acompañamiento continuo.', time: 'Continuo' },
       ],
     },
-    caso: {
-      tag: '// Un caso real',
-      title: 'Así se ve un sistema hecho a medida',
-      chromePath: 'front-comercial — panel de control',
-      industry: 'Retail · Comercio minorista',
-      caseTitle: 'Un sistema comercial completo, construido desde cero',
-      paragraph:
-        'Inventario, órdenes de venta, facturación y gestión de crédito en una sola plataforma — con impresión de etiquetas de precio y cobranza integrada a una financiera externa.',
-      stats: [
-        { num: '4', label: 'módulos integrados' },
-        { num: '1', label: 'plataforma, cero parches' },
-      ],
-      modules: [
-        { label: 'inventario', status: 'activo' },
-        { label: 'ventas / facturación', status: 'activo' },
-        { label: 'gestión de crédito', status: 'activo' },
-        { label: 'etiquetas de precio', status: 'activo' },
+    proyectos: {
+      tag: '// Proyectos',
+      title: 'Sistemas que construí y que siguen en uso',
+      paragraph: 'Una selección de proyectos reales — en producción o en desarrollo.',
+      prevLabel: 'Proyecto anterior',
+      nextLabel: 'Proyecto siguiente',
+      inProgress: 'En proceso',
+      viewSite: 'Ver sitio',
+      items: [
+        {
+          title: 'Kamex Solutions — Sistema de Stock para Comercios',
+          text: 'Sistema web de gestión comercial en producción: punto de venta, compras a proveedores, control de stock, cuentas corrientes y facturación electrónica ARCA, con un asistente de IA integrado y escaneo automático de facturas mediante IA. Desplegado y en funcionamiento en kamexsolutions.com.ar.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman', 'NIC.ar', 'Railway', 'Cloudflare', 'APIs de IA'],
+          url: 'https://kamexsolutions.com.ar',
+        },
+        {
+          title: 'Sistema Financiero',
+          text: 'Gestión de sucursales, comercios, usuarios, cheques, balances e intercambio de monedas.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'PHP (Laravel)', 'Scrum', 'Jira', 'Railway', 'APIs de IA'],
+        },
+        {
+          title: 'Sistema Comercial — Paco García',
+          text: 'Control de stock, facturación electrónica y otras operaciones comerciales para optimizar la gestión diaria del negocio.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'PHP (Laravel)', 'Scrum', 'Jira', 'Railway'],
+        },
+        {
+          title: 'Sistema Comercial — Todolandia/Copitec',
+          text: 'Control de stock y facturación electrónica, sobre la misma arquitectura utilizada en el sistema de Paco García.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'PHP (Laravel)', 'Scrum', 'Jira', 'Railway'],
+        },
+        {
+          title: 'Aplicación de Monitoreo para Personas con Discapacidad — Trabajo de Graduación (UNT)',
+          text: 'App móvil para gestión, monitoreo y seguimiento de rutinas, con ubicación en tiempo real y alertas automáticas.',
+          stack: ['React Native', 'MySQL', 'SQL', 'Documentación'],
+          status: 'progress',
+        },
+        {
+          title: 'Sistema de Stock — Dirección Estadística de la Provincia',
+          text: 'Sistema web para llevar el control sobre productos que ingresan y salen de la repartición.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman'],
+          note: 'Desplegado en servidores locales de la provincia',
+        },
+        {
+          title: 'Índice de Precios de Materiales y Equipos de la Construcción (ICC) — Dirección Estadística de la Provincia',
+          text: 'Sistema de gestión de datos para el seguimiento del índice de precios de materiales y equipos de la construcción.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman'],
+          note: 'Desplegado en servidores locales de la provincia',
+        },
+        {
+          title: 'Índice de Precios al Consumidor Tucumán — Dirección Estadística de la Provincia',
+          text: 'Sistema de gestión de datos para el seguimiento del índice de precios al consumidor de la provincia.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman'],
+          note: 'Desplegado en servidores locales de la provincia',
+        },
+        {
+          title: 'Sistema Gestor Geoestadística — Dirección Estadística de la Provincia',
+          text: 'Sistema web tipo Google Drive para organizar y gestionar archivos y carpetas, con funcionalidades de subida, eliminación y recuperación de archivos.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman'],
+          note: 'Desplegado en servidores locales de la provincia',
+        },
+        {
+          title: 'Bases de Datos — Veterinaria y Salud Pública (COVID-19)',
+          text: 'Diseño de bases de datos para gestión de historias clínicas, turnos e inventario (veterinaria) y control poblacional de salud (COVID-19).',
+          stack: ['MySQL', 'SQL'],
+        },
+        {
+          title: 'Ecommerce — Gamer',
+          text: 'Aplicación web dedicada a la venta de juegos y productos relacionados con el mundo gamer.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'MongoDB', 'Scrum', 'Vercel'],
+        },
+        {
+          title: 'Pedidos',
+          text: 'Aplicación web para que los clientes de un restaurante elijan entre distintos productos y puedan hacer sus pedidos.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'MongoDB', 'Scrum', 'Vercel'],
+        },
       ],
     },
     contacto: {
@@ -170,7 +228,7 @@ export const translations = {
       company: [
         { label: 'Nosotros', href: '#nosotros' },
         { label: 'Servicios', href: '#servicios' },
-        { label: 'Un caso real', href: '#caso' },
+        { label: 'Proyectos', href: '#proyectos' },
         { label: 'Contacto', href: '#contacto' },
       ],
       contactTitle: 'Contacto',
@@ -184,7 +242,7 @@ export const translations = {
       links: [
         { href: '#nosotros', label: 'About' },
         { href: '#servicios', label: 'Services' },
-        { href: '#caso', label: 'Case study' },
+        { href: '#proyectos', label: 'Projects' },
         { href: '#contacto', label: 'Contact' },
       ],
       cta: "Let's talk",
@@ -202,7 +260,7 @@ export const translations = {
       paragraph:
         'We build management, POS, and invoicing software designed around how you actually work — not the other way around. No forcing your operation into a generic system.',
       ctaPrimary: 'Tell me about your project',
-      ctaGhost: 'See a real system',
+      ctaGhost: 'See a real project',
       badges: ['React', 'Laravel', 'MySQL', 'Custom integrations'],
     },
     marquee: [
@@ -281,23 +339,81 @@ export const translations = {
         { num: '04', title: 'Delivery & support', text: 'Production rollout, team training, and ongoing support.', time: 'Ongoing' },
       ],
     },
-    caso: {
-      tag: '// A real case',
-      title: 'This is what custom-built software looks like',
-      chromePath: 'front-comercial — control panel',
-      industry: 'Retail · In-store commerce',
-      caseTitle: 'A complete commercial system, built from scratch',
-      paragraph:
-        'Inventory, sales orders, invoicing, and credit management in a single platform — with price-tag printing and collections integrated with an external lender.',
-      stats: [
-        { num: '4', label: 'integrated modules' },
-        { num: '1', label: 'platform, zero patches' },
-      ],
-      modules: [
-        { label: 'inventory', status: 'active' },
-        { label: 'sales / invoicing', status: 'active' },
-        { label: 'credit management', status: 'active' },
-        { label: 'price tags', status: 'active' },
+    proyectos: {
+      tag: '// Projects',
+      title: "Systems I've built that are actually in use",
+      paragraph: 'A selection of real projects — in production or in progress.',
+      prevLabel: 'Previous project',
+      nextLabel: 'Next project',
+      inProgress: 'In progress',
+      viewSite: 'View site',
+      items: [
+        {
+          title: 'Kamex Solutions — Inventory System for Retailers',
+          text: 'Commercial management web system in production: point of sale, supplier purchases, stock control, running accounts, and ARCA electronic invoicing, with a built-in AI assistant and automatic AI-based invoice scanning. Deployed and live at kamexsolutions.com.ar.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman', 'NIC.ar', 'Railway', 'Cloudflare', 'AI APIs'],
+          url: 'https://kamexsolutions.com.ar',
+        },
+        {
+          title: 'Financial System',
+          text: 'Branch, store, user, check, balance, and currency exchange management.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'PHP (Laravel)', 'Scrum', 'Jira', 'Railway', 'AI APIs'],
+        },
+        {
+          title: 'Commercial System — Paco García',
+          text: 'Stock control, electronic invoicing, and other commercial operations to streamline daily business management.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'PHP (Laravel)', 'Scrum', 'Jira', 'Railway'],
+        },
+        {
+          title: 'Commercial System — Todolandia/Copitec',
+          text: 'Stock control and electronic invoicing, built on the same architecture used for the Paco García system.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'PHP (Laravel)', 'Scrum', 'Jira', 'Railway'],
+        },
+        {
+          title: 'Monitoring App for People with Disabilities — Graduation Thesis (UNT)',
+          text: 'Mobile app for managing, monitoring, and tracking routines, with real-time location and automatic alerts.',
+          stack: ['React Native', 'MySQL', 'SQL', 'Documentation'],
+          status: 'progress',
+        },
+        {
+          title: 'Inventory System — Provincial Statistics Office',
+          text: "Web system to track products entering and leaving the department.",
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman'],
+          note: "Deployed on the province's local servers",
+        },
+        {
+          title: 'Construction Materials & Equipment Price Index (ICC) — Provincial Statistics Office',
+          text: 'Data management system for tracking the construction materials and equipment price index.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman'],
+          note: "Deployed on the province's local servers",
+        },
+        {
+          title: 'Tucumán Consumer Price Index — Provincial Statistics Office',
+          text: "Data management system for tracking the province's consumer price index.",
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman'],
+          note: "Deployed on the province's local servers",
+        },
+        {
+          title: 'Geostatistics File Manager — Provincial Statistics Office',
+          text: 'Google Drive-style web system for organizing and managing files and folders, with upload, deletion, and recovery features.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'JavaScript', 'PHP', 'Postman'],
+          note: "Deployed on the province's local servers",
+        },
+        {
+          title: 'Databases — Veterinary Clinic & Public Health (COVID-19)',
+          text: 'Database design for managing medical records, appointments, and inventory (veterinary clinic) and population health tracking (COVID-19).',
+          stack: ['MySQL', 'SQL'],
+        },
+        {
+          title: 'Ecommerce — Gamer',
+          text: 'Web application for selling games and gaming-related products.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'MongoDB', 'Scrum', 'Vercel'],
+        },
+        {
+          title: 'Orders',
+          text: 'Web app for restaurant customers to browse products and place their orders.',
+          stack: ['HTML5', 'CSS (Bootstrap 5.3)', 'React.js', 'MongoDB', 'Scrum', 'Vercel'],
+        },
       ],
     },
     contacto: {
@@ -350,7 +466,7 @@ export const translations = {
       company: [
         { label: 'About', href: '#nosotros' },
         { label: 'Services', href: '#servicios' },
-        { label: 'Case study', href: '#caso' },
+        { label: 'Projects', href: '#proyectos' },
         { label: 'Contact', href: '#contacto' },
       ],
       contactTitle: 'Contact',
