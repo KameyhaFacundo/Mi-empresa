@@ -1,6 +1,6 @@
-# Kamex Soluciones — Landing
+# Kamex Solutions — Landing
 
-Landing de Kamex Soluciones (desarrollo de software a medida en Argentina), hecha con Vite + React.
+Landing de Kamex Solutions (desarrollo de software a medida en Argentina), hecha con Vite + React.
 
 ## Desarrollo
 

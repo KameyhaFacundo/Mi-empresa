@@ -21,7 +21,7 @@ export default function Footer() {
     <footer>
       <div className="footer-grid">
         <div className="footer-brand">
-          <span className="logo">Kamex Soluciones</span>
+          <span className="logo">Kamex Solutions</span>
           <p>
             Software a medida, sin plantillas, para negocios que necesitan sistemas
             sólidos y gente que responda.
@@ -62,8 +62,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>© {year} Kamex Soluciones · Todos los derechos reservados.</span>
-        <span className="mono">Hecho a medida, no en serie.</span>
+        <span>© {year} Kamex Solutions · Todos los derechos reservados.</span>
       </div>
     </footer>
   );

@@ -27,7 +27,7 @@ export default function Nav({ theme, toggleTheme }) {
 
   return (
     <nav>
-      <a href="#" className="logo">Kamex Soluciones</a>
+      <a href="#" className="logo">Kamex Solutions</a>
 
       <div className="nav-links">
         {LINKS.map((link) => (

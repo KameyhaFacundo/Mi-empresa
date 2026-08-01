@@ -7,7 +7,7 @@ import Proceso from './components/Proceso';
 import CasoReal from './components/CasoReal';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
+import WhatsAppFloat from './components/WhatsAppFloat';
 import { useTheme } from './hooks/useTheme';
 
 function App() {
@@ -15,7 +15,6 @@ function App() {
 
   return (
     <>
-      <CustomCursor />
       <Nav theme={theme} toggleTheme={toggleTheme} />
       <Hero theme={theme} />
       <Marquee />
@@ -25,6 +24,7 @@ function App() {
       <CasoReal />
       <Contacto />
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }
