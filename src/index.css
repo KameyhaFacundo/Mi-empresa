@@ -143,6 +143,58 @@ nav {
 }
 .theme-toggle:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 
+.lang-switch { position: relative; }
+
+.lang-switch__button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.lang-switch__button:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.lang-switch__button svg:first-child { color: var(--text-dim); }
+
+.lang-switch__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  z-index: 110;
+}
+
+.lang-switch__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-switch__option:hover { background: var(--surface-2); color: var(--text); }
+.lang-switch__option.active { color: var(--accent); font-weight: 600; }
+
 .nav-toggle {
   display: none;
   width: 38px;

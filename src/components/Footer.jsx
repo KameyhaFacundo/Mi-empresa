@@ -1,20 +1,4 @@
-const SERVICIOS = [
-  'Sistemas de gestión',
-  'Punto de venta (POS)',
-  'Integraciones a medida',
-  'Automatización de procesos',
-  'Consultoría tecnológica',
-  'Soporte y mantenimiento',
-];
-
-const EMPRESA = [
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Un caso real', href: '#caso' },
-  { label: 'Contacto', href: '#contacto' },
-];
-
-export default function Footer() {
+export default function Footer({ t }) {
   const year = new Date().getFullYear();
 
   return (
@@ -22,10 +6,7 @@ export default function Footer() {
       <div className="footer-grid">
         <div className="footer-brand">
           <span className="logo">Kamex Solutions</span>
-          <p>
-            Software a medida, sin plantillas, para negocios que necesitan sistemas
-            sólidos y gente que responda.
-          </p>
+          <p>{t.brandText}</p>
           <div className="stack-badges">
             <span className="badge">React</span>
             <span className="badge">Laravel</span>
@@ -34,35 +15,35 @@ export default function Footer() {
         </div>
 
         <div className="footer-col">
-          <span className="footer-col__title mono">Servicios</span>
+          <span className="footer-col__title mono">{t.servicesTitle}</span>
           <ul>
-            {SERVICIOS.map((s) => (
+            {t.services.map((s) => (
               <li key={s}><a href="#servicios">{s}</a></li>
             ))}
           </ul>
         </div>
 
         <div className="footer-col">
-          <span className="footer-col__title mono">Empresa</span>
+          <span className="footer-col__title mono">{t.companyTitle}</span>
           <ul>
-            {EMPRESA.map((item) => (
+            {t.company.map((item) => (
               <li key={item.href}><a href={item.href}>{item.label}</a></li>
             ))}
           </ul>
         </div>
 
         <div className="footer-col">
-          <span className="footer-col__title mono">Contacto</span>
+          <span className="footer-col__title mono">{t.contactTitle}</span>
           <ul>
             <li><a href="mailto:kamexsolutions@gmail.com">kamexsolutions@gmail.com</a></li>
             <li><a href="https://wa.me/5493815069332" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><span>Tucumán, Argentina</span></li>
+            <li><span>{t.location}</span></li>
           </ul>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <span>© {year} Kamex Solutions · Todos los derechos reservados.</span>
+        <span>© {year} Kamex Solutions · {t.rights}</span>
       </div>
     </footer>
   );

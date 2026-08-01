@@ -1,13 +1,4 @@
-const items = [
-  'Sistemas de gestión',
-  'Punto de venta',
-  'Integraciones',
-  'Automatización',
-  'Consultoría',
-  'Soporte continuo',
-];
-
-function Track() {
+function Track({ items }) {
   return (
     <div className="marquee-half" aria-hidden="true">
       {items.map((item) => (
@@ -20,12 +11,12 @@ function Track() {
   );
 }
 
-export default function Marquee() {
+export default function Marquee({ t }) {
   return (
     <div className="marquee">
       <div className="marquee-track">
-        <Track />
-        <Track />
+        <Track items={t} />
+        <Track items={t} />
       </div>
     </div>
   );

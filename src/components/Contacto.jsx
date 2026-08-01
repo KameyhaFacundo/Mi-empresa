@@ -62,33 +62,34 @@ function IconLinkedin() {
   );
 }
 
-const CONTACT_ITEMS = [
-  {
-    icon: <IconMail />,
-    label: 'Email',
-    value: 'kamexsolutions@gmail.com',
-    href: 'mailto:kamexsolutions@gmail.com',
-  },
-  {
-    icon: <IconPin />,
-    label: 'Ubicación',
-    value: 'Argentina',
-  },
-  {
-    icon: <IconClock />,
-    label: 'Tiempo de respuesta',
-    value: 'Menos de 48 horas',
-  },
-];
-
 const SOCIAL_LINKS = [
   { icon: <IconGithub />, href: 'https://github.com/KameyhaFacundo', label: 'GitHub' },
   { icon: <IconLinkedin />, href: 'https://www.linkedin.com/in/facundo-kameyha/', label: 'LinkedIn' },
 ];
 
-export default function Contacto() {
+export default function Contacto({ t }) {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
+  const f = t.form;
+
+  const CONTACT_ITEMS = [
+    {
+      icon: <IconMail />,
+      label: t.emailLabel,
+      value: 'kamexsolutions@gmail.com',
+      href: 'mailto:kamexsolutions@gmail.com',
+    },
+    {
+      icon: <IconPin />,
+      label: t.locationLabel,
+      value: t.locationValue,
+    },
+    {
+      icon: <IconClock />,
+      label: t.responseLabel,
+      value: t.responseValue,
+    },
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -98,11 +99,11 @@ export default function Contacto() {
     const mensaje = data.get('mensaje')?.trim();
 
     if (!nombre || !email || !mensaje) {
-      setError('Completá los campos obligatorios.');
+      setError(f.errorRequired);
       return;
     }
     if (!EMAIL_RE.test(email)) {
-      setError('Ingresá un email válido.');
+      setError(f.errorEmail);
       return;
     }
 
@@ -117,11 +118,11 @@ export default function Contacto() {
       <div className="contact-grid">
         <Reveal>
           <div className="cta">
-            <span className="section-tag">// Empecemos</span>
+            <span className="section-tag">{t.tag}</span>
             <h2>
-              Contame qué necesita <em>tu</em> negocio
+              {t.titleBefore}<em>{t.titleEm}</em>{t.titleAfter}
             </h2>
-            <p>Escribinos y te respondemos con una evaluación inicial de tu proyecto.</p>
+            <p>{t.paragraph}</p>
           </div>
 
           <div className="contact-info">
@@ -131,13 +132,7 @@ export default function Contacto() {
                 <div>
                   <span className="contact-info__label">{item.label}</span>
                   {item.href ? (
-                    <a
-                      className="contact-info__value"
-                      href={item.href}
-                      {...(item.external ? { target: '_blank', rel: 'noopener' } : {})}
-                    >
-                      {item.value}
-                    </a>
+                    <a className="contact-info__value" href={item.href}>{item.value}</a>
                   ) : (
                     <span className="contact-info__value">{item.value}</span>
                   )}
@@ -167,48 +162,44 @@ export default function Contacto() {
             <form onSubmit={handleSubmit} noValidate>
               <div className="form-row">
                 <div>
-                  <label htmlFor="nombre">Nombre y apellido *</label>
+                  <label htmlFor="nombre">{f.nameLabel}</label>
                   <input type="text" id="nombre" name="nombre" required />
                 </div>
                 <div>
-                  <label htmlFor="email">Email *</label>
+                  <label htmlFor="email">{f.emailLabel}</label>
                   <input type="email" id="email" name="email" required />
                 </div>
               </div>
               <div>
-                <label htmlFor="empresa">Empresa</label>
+                <label htmlFor="empresa">{f.companyLabel}</label>
                 <input type="text" id="empresa" name="empresa" />
               </div>
               <div>
-                <label htmlFor="servicio">¿Qué necesitás?</label>
+                <label htmlFor="servicio">{f.serviceLabel}</label>
                 <select id="servicio" name="servicio" defaultValue="">
-                  <option value="" disabled>Seleccioná un servicio</option>
-                  <option>Desarrollo de software a medida</option>
-                  <option>Punto de venta (POS)</option>
-                  <option>Integraciones a medida</option>
-                  <option>Automatización de procesos</option>
-                  <option>Consultoría tecnológica</option>
-                  <option>Soporte y mantenimiento</option>
-                  <option>Otro / No sé bien todavía</option>
+                  <option value="" disabled>{f.servicePlaceholder}</option>
+                  {f.serviceOptions.map((opt) => (
+                    <option key={opt}>{opt}</option>
+                  ))}
                 </select>
               </div>
               <div>
-                <label htmlFor="mensaje">Contanos tu proyecto *</label>
+                <label htmlFor="mensaje">{f.messageLabel}</label>
                 <textarea id="mensaje" name="mensaje" required />
               </div>
 
               {error && <p className="form-error">{error}</p>}
 
-              <button type="submit" className="submit-btn">Enviar mensaje</button>
+              <button type="submit" className="submit-btn">{f.submit}</button>
 
               {sent && (
                 <p className="form-success">
                   <span className="form-success__icon"><IconCheck /></span>
-                  ¡Gracias! Recibimos tu mensaje y te vamos a contactar a la brevedad.
+                  {f.success}
                 </p>
               )}
 
-              <div className="or-divider">o escribinos directo</div>
+              <div className="or-divider">{f.orDivider}</div>
 
               <a
                 href="https://wa.me/5493815069332"
@@ -217,7 +208,7 @@ export default function Contacto() {
                 className="whatsapp-link"
               >
                 <IconWhatsapp />
-                Escribir por WhatsApp
+                {f.whatsapp}
               </a>
             </form>
           </div>

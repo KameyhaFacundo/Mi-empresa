@@ -4,7 +4,7 @@ import { gsap, ScrollTrigger } from '../lib/gsapSetup';
 
 const Hero3D = lazy(() => import('./Hero3D'));
 
-export default function Hero({ theme }) {
+export default function Hero({ theme, t }) {
   const heroRef = useRef(null);
   const contentRef = useRef(null);
   const scrollProgress = useRef(0);
@@ -53,27 +53,23 @@ export default function Hero({ theme }) {
         </Suspense>
       </div>
       <div className="hero-content" ref={contentRef}>
-        <span className="eyebrow">Desarrollo a medida · Sin plantillas</span>
+        <span className="eyebrow">{t.eyebrow}</span>
         <h1>
-          Tu negocio no funciona como <em>cualquier</em> sistema.
+          {t.titleBefore}<em>{t.titleEm}</em>{t.titleAfter}
         </h1>
-        <p>
-          Armamos software de gestión, POS y facturación pensado para cómo trabajás vos
-          — no al revés. Sin adaptar tu operación a un sistema genérico.
-        </p>
+        <p>{t.paragraph}</p>
         <div className="hero-actions">
           <Magnetic>
-            <a href="#contacto" className="btn-primary">Contame tu caso</a>
+            <a href="#contacto" className="btn-primary">{t.ctaPrimary}</a>
           </Magnetic>
           <Magnetic strength={12}>
-            <a href="#caso" className="btn-ghost">Ver un sistema real</a>
+            <a href="#caso" className="btn-ghost">{t.ctaGhost}</a>
           </Magnetic>
         </div>
         <div className="stack-badges">
-          <span className="badge">React</span>
-          <span className="badge">Laravel</span>
-          <span className="badge">MySQL</span>
-          <span className="badge">Integraciones a medida</span>
+          {t.badges.map((b) => (
+            <span className="badge" key={b}>{b}</span>
+          ))}
         </div>
       </div>
     </section>
