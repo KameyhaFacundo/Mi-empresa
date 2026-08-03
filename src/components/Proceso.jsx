@@ -9,12 +9,11 @@ export default function Proceso({ t }) {
         <p>{t.paragraph}</p>
       </Reveal>
       <Reveal as="div" className="process-steps" stagger>
-        {t.steps.map((s) => (
+        {t.steps.map((s, i) => (
           <div className="process-step" key={s.num}>
-            <span className="step-num">{s.num}</span>
+            <span className="process-step__dot">{i + 1}</span>
             <h3>{s.title}</h3>
             <p>{s.text}</p>
-            <span className="time">{s.time}</span>
           </div>
         ))}
       </Reveal>

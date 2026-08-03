@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import TechIcon from './TechIcon';
 
 export default function Servicios({ t }) {
   return (
@@ -16,7 +17,7 @@ export default function Servicios({ t }) {
             <p className="service-row__text">{s.text}</p>
             <div className="service-row__stack">
               {s.stack.map((tech) => (
-                <span className="badge" key={tech}>{tech}</span>
+                <span className="badge" key={tech}><TechIcon label={tech} />{tech}</span>
               ))}
             </div>
           </div>

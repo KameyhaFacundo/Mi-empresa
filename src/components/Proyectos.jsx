@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Reveal from './Reveal';
+import TechIcon from './TechIcon';
 
 function IconArrow({ direction = 'right' }) {
   return (
@@ -57,7 +58,7 @@ export default function Proyectos({ t }) {
           <p>{project.text}</p>
           <div className="project-stack">
             {project.stack.map((tech) => (
-              <span className="badge" key={tech}>{tech}</span>
+              <span className="badge" key={tech}><TechIcon label={tech} />{tech}</span>
             ))}
           </div>
           {project.url && (

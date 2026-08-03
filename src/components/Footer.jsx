@@ -1,3 +1,5 @@
+import TechIcon from './TechIcon';
+
 export default function Footer({ t }) {
   const year = new Date().getFullYear();
 
@@ -8,9 +10,9 @@ export default function Footer({ t }) {
           <span className="logo">Kamex Solutions</span>
           <p>{t.brandText}</p>
           <div className="stack-badges">
-            <span className="badge">React</span>
-            <span className="badge">Laravel</span>
-            <span className="badge">MySQL</span>
+            <span className="badge"><TechIcon label="React" />React</span>
+            <span className="badge"><TechIcon label="Laravel" />Laravel</span>
+            <span className="badge"><TechIcon label="MySQL" />MySQL</span>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useRef } from 'react';
 import Magnetic from './Magnetic';
+import TechIcon from './TechIcon';
 import { gsap, ScrollTrigger } from '../lib/gsapSetup';
 
 const Hero3D = lazy(() => import('./Hero3D'));
@@ -68,7 +69,7 @@ export default function Hero({ theme, t }) {
         </div>
         <div className="stack-badges">
           {t.badges.map((b) => (
-            <span className="badge" key={b}>{b}</span>
+            <span className="badge" key={b}><TechIcon label={b} />{b}</span>
           ))}
         </div>
       </div>

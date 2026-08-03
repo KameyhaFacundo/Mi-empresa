@@ -21,15 +21,6 @@ function IconPin() {
   );
 }
 
-function IconClock() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 7v5l3.2 2" />
-    </svg>
-  );
-}
-
 function IconWhatsapp() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -84,11 +75,6 @@ export default function Contacto({ t }) {
       label: t.locationLabel,
       value: t.locationValue,
     },
-    {
-      icon: <IconClock />,
-      label: t.responseLabel,
-      value: t.responseValue,
-    },
   ];
 
   const handleSubmit = (e) => {
@@ -115,8 +101,8 @@ export default function Contacto({ t }) {
 
   return (
     <section id="contacto">
-      <div className="contact-grid">
-        <Reveal>
+      <Reveal as="div" className="contact-panel">
+        <div className="contact-panel__info">
           <div className="cta">
             <span className="section-tag">{t.tag}</span>
             <h2>
@@ -142,6 +128,7 @@ export default function Contacto({ t }) {
           </div>
 
           <div className="contact-social">
+            <span className="contact-social__label mono">{t.socialLabel}</span>
             {SOCIAL_LINKS.map((item) => (
               <a
                 key={item.label}
@@ -155,52 +142,42 @@ export default function Contacto({ t }) {
               </a>
             ))}
           </div>
-        </Reveal>
+        </div>
 
-        <Reveal>
-          <div className="contact-form-panel">
-            <form onSubmit={handleSubmit} noValidate>
-              <div className="form-row">
-                <div>
-                  <label htmlFor="nombre">{f.nameLabel}</label>
-                  <input type="text" id="nombre" name="nombre" required />
-                </div>
-                <div>
-                  <label htmlFor="email">{f.emailLabel}</label>
-                  <input type="email" id="email" name="email" required />
-                </div>
+        <div className="contact-panel__form">
+          <form onSubmit={handleSubmit} noValidate>
+            <div className="form-row">
+              <div>
+                <label htmlFor="nombre">{f.nameLabel}</label>
+                <input type="text" id="nombre" name="nombre" required />
               </div>
               <div>
-                <label htmlFor="empresa">{f.companyLabel}</label>
-                <input type="text" id="empresa" name="empresa" />
+                <label htmlFor="email">{f.emailLabel}</label>
+                <input type="email" id="email" name="email" required />
               </div>
-              <div>
-                <label htmlFor="servicio">{f.serviceLabel}</label>
-                <select id="servicio" name="servicio" defaultValue="">
-                  <option value="" disabled>{f.servicePlaceholder}</option>
-                  {f.serviceOptions.map((opt) => (
-                    <option key={opt}>{opt}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="mensaje">{f.messageLabel}</label>
-                <textarea id="mensaje" name="mensaje" required />
-              </div>
+            </div>
+            <div>
+              <label htmlFor="empresa">{f.companyLabel}</label>
+              <input type="text" id="empresa" name="empresa" />
+            </div>
+            <div>
+              <label htmlFor="servicio">{f.serviceLabel}</label>
+              <select id="servicio" name="servicio" defaultValue="">
+                <option value="" disabled>{f.servicePlaceholder}</option>
+                {f.serviceOptions.map((opt) => (
+                  <option key={opt}>{opt}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="mensaje">{f.messageLabel}</label>
+              <textarea id="mensaje" name="mensaje" required />
+            </div>
 
-              {error && <p className="form-error">{error}</p>}
+            {error && <p className="form-error">{error}</p>}
 
+            <div className="contact-panel__actions">
               <button type="submit" className="submit-btn">{f.submit}</button>
-
-              {sent && (
-                <p className="form-success">
-                  <span className="form-success__icon"><IconCheck /></span>
-                  {f.success}
-                </p>
-              )}
-
-              <div className="or-divider">{f.orDivider}</div>
-
               <a
                 href="https://wa.me/5493815069332"
                 target="_blank"
@@ -210,10 +187,17 @@ export default function Contacto({ t }) {
                 <IconWhatsapp />
                 {f.whatsapp}
               </a>
-            </form>
-          </div>
-        </Reveal>
-      </div>
+            </div>
+
+            {sent && (
+              <p className="form-success">
+                <span className="form-success__icon"><IconCheck /></span>
+                {f.success}
+              </p>
+            )}
+          </form>
+        </div>
+      </Reveal>
     </section>
   );
 }
